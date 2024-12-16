@@ -1,0 +1,30 @@
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.6/axios.min.js"></script>
+    <script>
+        async function sumHandler() {
+            // alert("hii")
+            const a = document.getElementById("a").value;
+            const b = document.getElementById("b").value;
+            const response = await axios.post("http://localhost:3000/sum", { a, b })
+            // .then(response => {
+            //     // Handle the response
+            //     console.log("Response:", response.data);
+            //     alert(`Sum: ${response.data.sum}`);
+            // })
+            // .catch(error => {
+            //     // Handle errors
+            //     console.error("Error:", error);
+            //     alert("An error occurred while processing the request.");
+            // });
+            console.log(response.data);
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <input id="a" placeholder="Enter first value" />
+    <input id="b" placeholder="Enter second value" />
+    <button onclick="sumHandler()">Add</button>
+</body>
